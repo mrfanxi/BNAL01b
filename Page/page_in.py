@@ -1,4 +1,5 @@
 from Base.get_driver import get_driver
+from Page.page_address import PageAddress
 from Page.page_login import PageLogin
 # 获取driver
 driver=get_driver()
@@ -9,4 +10,4 @@ class PageIn():
 
     # 获取 PageAddress对象
     def page_get_pageaddress(self):
-        return PageLogin(driver)
+        return PageAddress(driver)
