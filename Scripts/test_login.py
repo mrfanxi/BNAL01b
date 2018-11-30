@@ -73,4 +73,8 @@ class TestLogin():
             except:
                 # 截图
                 self.login.base_getImage()
+                # 打开图片写入报告
+                with open("./Image/faild.png", "rb") as f:
+                    allure.attach("失败原因请附图：", f.read(), allure.attach_type.PNG)
+                # 抛出异常
                 raise
