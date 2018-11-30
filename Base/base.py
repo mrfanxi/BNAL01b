@@ -38,3 +38,9 @@ class Base():
     def base_drag_and_drop(self,el1,el2):
         # 从el1元素拖拽到el2元素的位置
         self.driver.drag_and_drop(el1,el2)
+
+    # 封装，并根据文本查找元素然后点击
+    def base_text_click(self, text):
+        loc = By.XPATH, "//*[contains(@text,'" + text + "')]"
+        # 调用查找元素的方法并点击
+        self.base_find_element(loc).click()

@@ -8,3 +8,5 @@ class PageIn():
         return PageLogin(driver)
 
     # 获取 PageAddress对象
+    def page_get_pageaddress(self):
+        return PageLogin(driver)
