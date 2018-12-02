@@ -8,6 +8,6 @@ class PageIn():
     def page_get_pagelogin(self):
         return PageLogin(driver)
 
-    # 获取 PageAddress对象,
+    # 获取 PageAddress对象
     def page_get_pageaddress(self):
         return PageAddress(driver)

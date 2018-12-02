@@ -52,7 +52,7 @@ class PageLogin(Base):
 
     # 封装登录整体方法+点击设置
     @allure.step('登录并点击设置按钮')
-    def page_login_and_setting(self, username, password):
+    def page_login_and_setting(self, username="18610453007", password="123456"):
         self.page_click_me()
         self.page_click_user_link()
         self.page_input_username(username)

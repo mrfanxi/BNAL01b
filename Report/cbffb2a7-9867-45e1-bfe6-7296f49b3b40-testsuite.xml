@@ -1,0 +1,74 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1543766424970" stop="1543766500397">
+  <name>test_address</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1543766424970" status="passed" stop="1543766483504">
+      <name>TestAddress.test_address[Claire-18600003333-\u5e7f\u4e1c\u7701-\u6df1\u5733\u5e02-\u8d8a\u79c0\u533a-xxxx\u53f7-050005]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="10396-MainThread"/>
+        <label name="host" value="DESKTOP-RK101AP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1543766424984" status="passed" stop="1543766436864">
+          <name>登录并点击设置按钮</name>
+          <title>登录并点击设置按钮</title>
+          <attachments/>
+          <steps>
+            <step start="1543766424984" status="passed" stop="1543766426807">
+              <name>点击 我</name>
+              <title>点击 我</title>
+              <attachments/>
+              <steps/>
+            </step>
+            <step start="1543766426807" status="passed" stop="1543766428841">
+              <name>点击 已有账号，去登录</name>
+              <title>点击 已有账号，去登录</title>
+              <attachments/>
+              <steps/>
+            </step>
+            <step start="1543766428841" status="passed" stop="1543766431334">
+              <name>输入 用户名</name>
+              <title>输入 用户名</title>
+              <attachments/>
+              <steps/>
+            </step>
+            <step start="1543766431334" status="passed" stop="1543766433747">
+              <name>输入 密码</name>
+              <title>输入 密码</title>
+              <attachments/>
+              <steps/>
+            </step>
+            <step start="1543766433747" status="passed" stop="1543766434331">
+              <name>点击 登录</name>
+              <title>点击 登录</title>
+              <attachments/>
+              <steps/>
+            </step>
+            <step start="1543766434331" status="passed" stop="1543766436864">
+              <name>点击设置</name>
+              <title>点击设置</title>
+              <attachments/>
+              <steps/>
+            </step>
+          </steps>
+        </step>
+      </steps>
+    </test-case>
+    <test-case start="1543766483510" status="passed" stop="1543766500397">
+      <name>TestAddress.test_updata_address[Leon-18600001111-\u5317\u4eac\u5e02-\u5317\u4eac\u5e02-\u671d\u9633\u533a-XXXXXX\u53f7-010001]</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="10396-MainThread"/>
+        <label name="host" value="DESKTOP-RK101AP"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

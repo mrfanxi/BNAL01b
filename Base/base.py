@@ -1,11 +1,17 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+
 class Base():
     def __init__(self,driver):
         self.driver=driver
     # 下面的方法
     def base_find_element(self,loc,timeout=30,poll=0.5):
         return WebDriverWait(self.driver,timeout=timeout,poll_frequency=poll).until(lambda x:x.find_element(*loc))
+
+    # 下面的方法2
+    def base_find_elements(self, loc, timeout=30, poll=0.5):
+        return WebDriverWait(self.driver, timeout=timeout, poll_frequency=poll).until(
+            lambda x: x.find_elements(*loc))
     # 点击
     def base_click(self,loc):
         # 调用自己封装查找元素类
@@ -24,8 +30,8 @@ class Base():
 
     # 获取toast消息方法
     def base_get_toast(self,message):
-        loc=(By.XPATH,"//*[contains(@text,'"+message+"')]")
-        # loc=By.XPATH,"//*[contains(@text,'%s')]"%message
+        loc = By.XPATH, "//*[contains(@text,'" + message + "')]"
+        # loc=By.XPATH,"//*[contains(@text,'%s')]" % message
         # 调用查找元素方法 注意：要return
         return self.base_find_element(loc,poll=0.1).text
 
@@ -44,3 +50,13 @@ class Base():
         loc = By.XPATH, "//*[contains(@text,'" + text + "')]"
         # 调用查找元素的方法并点击
         self.base_find_element(loc).click()
+    # 获取一组元素制定文本
+    def base_get_list_text(self, loc):
+        # 用列表方式返回元素的文本
+        return [i.text for i in self.base_find_elements(loc)]
+    # 封装，根据文本查找一组元素并根据下标点击指定元素，默认点击第一个
+    def base_text_get_elements_and_click(self,text,num=0):
+        loc=By.XPATH, "//*[contains(@text,'" + text + "')]"
+        # 调用查找元素方法，并点击
+        self.base_find_elements(loc)[num].click()
+

@@ -1,14 +1,14 @@
 import os
 def read_txt(filename):
-    with open(os.getcwd()+os.sep+"Data"+os.sep+filename,"r",encoding="utf-8")as f:
-        arrs=[]
+    with open(os.getcwd() + os.sep + "Data" + os.sep + filename, "r", encoding="utf-8")as f:
+        arrs = []
         for i in f.readlines():
             arrs.append(tuple(i.strip().split(",")))
         return arrs
 
 def read_txt_1():
-    with open("../Data/login.txt","r",encoding="utf-8")as f:
-        arrs=[]
+    with open("../Data/login.txt", "r", encoding="utf-8")as f:
+        arrs = []
         for i in f.readlines():
             arrs.append(tuple(i.strip().split(",")))
         return arrs

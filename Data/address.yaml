@@ -1,0 +1,16 @@
+#al_address_add_manage_001:
+#  name: "Leon"
+#  phone: "18600002222"
+#  sheng: "北京市"
+#  shi: "北京市"
+#  qu: "朝阳区"
+#  info_address: "南十里居6号院"
+#  code: "010001"
+al_address_add_manage_002:
+  name: "Claire"
+  phone: "18600003333"
+  sheng: "广东省"
+  shi: "深圳市"
+  qu: "越秀区"
+  info_address: "xxxx号"
+  code: "050005"
