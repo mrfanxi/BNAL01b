@@ -47,9 +47,11 @@ address_detail_addr_info = By.ID, "com.yunmall.lc:id/address_detail_addr_info"
 address_post_code = By.ID, "com.yunmall.lc:id/address_post_code"
 # 是否设为默认地址
 address_default = By.ID, "com.yunmall.lc:id/address_default"
-
+# 收件人__电话
 address_name_and_phone = By.ID, "com.yunmall.lc:id/receipt_name"
 # 直辖市
 address_zhixiashi = By.ID, "com.yunmall.lc:id/area_title"
 # 包裹直辖市的大框
 address_zhixiashi_kuang = By.CLASS_NAME, "android.widget.RelativeLayout"
+# 确认删除
+address_del_ok = By.ID, "com.yunmall.lc:id/ymdialog_left_button"

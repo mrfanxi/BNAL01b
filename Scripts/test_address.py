@@ -5,14 +5,20 @@ import allure
 import pytest
 from Page.page_in import PageIn
 
-def get_data():
+def get_data(data_type):
 #     return [("Leon","18600001111","山西省","临汾市","尧都区","贡院西街1号","041004")]
 #     return [("Leon","18600001111","北京市","北京市","朝阳区","XXXXXX号","010001")]
     arrs=[]
-    for data in ReadYaml("address.yaml").read_yaml().values():
-        arrs.append((data.get("name"),data.get("phone"),data.get("sheng"),data.get("shi"),data.get("qu"),
-                     data.get("info_address"),data.get("code")))
-    return arrs
+    if data_type == "add":
+        for data in ReadYaml("address.yaml").read_yaml().get("add_address").values():
+            arrs.append((data.get("name"),data.get("phone"),data.get("sheng"),data.get("shi"),data.get("qu"),
+                         data.get("info_address"),data.get("code")))
+        return arrs
+    elif data_type == "updata":
+        for data in ReadYaml("address.yaml").read_yaml().get("updata_address").values():
+            arrs.append((data.get("name"),data.get("phone"),data.get("sheng"),data.get("shi"),data.get("qu"),
+                         data.get("info_address"),data.get("code")))
+        return arrs
 def get_data1():
     return [("Leon","18600001111","北京市","北京市","朝阳区","XXXXXX号","010001")]
 class TestAddress():
@@ -27,7 +33,9 @@ class TestAddress():
         self.address.driver.quit()
 
     # 新增地址方法
-    @pytest.mark.parametrize("name, phone, sheng, shi, qu, info_address, code", get_data())
+    @allure.step("开始新增地址操作")
+    @pytest.mark.run(order=1)
+    @pytest.mark.parametrize("name, phone, sheng, shi, qu, info_address, code", get_data("add"))
     def test_address(self, name, phone, sheng, shi, qu, info_address, code):
         # 地址管理
         self.address.page_click_address()
@@ -60,7 +68,9 @@ class TestAddress():
             # 抛出异常
             raise
     # 修改地址方法
-    @pytest.mark.parametrize("name,phone,sheng,shi,qu,info_address,code", get_data1())
+    @allure.step("开始修改地址操作")
+    @pytest.mark.run(order=2)
+    @pytest.mark.parametrize("name,phone,sheng,shi,qu,info_address,code", get_data("updata"))
     def test_updata_address(self, name, phone, sheng, shi, qu, info_address, code):
         self.address.page_click_edit_btn()
         # 点击修改
@@ -84,6 +94,34 @@ class TestAddress():
             assert expect_result in self.address.page_get_list_name_and_phone()
         except:
             # 截图
+            self.address.base_getImage()
+            # 打开图片 并写入报告
+            with open("./Image/faild.png", "rb")as f:
+                allure.attach("失败原因请附件图：", f.read(), allure.attach_type.PNG)
+            # 将捕获的异常 抛出
+            raise
+
+    # 删除地址的方法
+    @allure.step("开始删除地址操作")
+    @pytest.mark.run(order=3)
+    def test_delete_address(self):
+        if self.address.page_address_manage_is_exist():
+            # 点击地址管理
+            self.address.page_click_address_manage()
+        # # 点击编辑
+        # self.address.page_click_edit_btn()
+        # # 点击删除
+        # self.address.page_click_list_elements("删除")
+        # # 确认删除
+        # self.address.page_delete_ok()
+
+        # 删除所有地址
+        self.address.page_delete_all_address()
+        try:
+            # 断言地列表是否还存在地址
+            assert self.address.page_get_address_list_is_exist()
+        except:
+        # 截图
             self.address.base_getImage()
             # 打开图片 并写入报告
             with open("./Image/faild.png", "rb")as f:

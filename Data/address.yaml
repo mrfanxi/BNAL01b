@@ -1,16 +1,27 @@
-#al_address_add_manage_001:
-#  name: "Leon"
-#  phone: "18600002222"
-#  sheng: "北京市"
-#  shi: "北京市"
-#  qu: "朝阳区"
-#  info_address: "南十里居6号院"
-#  code: "010001"
-al_address_add_manage_002:
-  name: "Claire"
-  phone: "18600003333"
-  sheng: "广东省"
-  shi: "深圳市"
-  qu: "越秀区"
-  info_address: "xxxx号"
-  code: "050005"
+add_address:
+  #al_address_add_manage_001:
+  #  name: "Leon"
+  #  phone: "18600002222"
+  #  sheng: "北京市"
+  #  shi: "北京市"
+  #  qu: "朝阳区"
+  #  info_address: "南十里居6号院"
+  #  code: "010001"
+  al_address_add_manage_002:
+    name: "Claire"
+    phone: "18600003333"
+    sheng: "广东省"
+    shi: "深圳市"
+    qu: "越秀区"
+    info_address: "xxxx号"
+    code: "050005"
+
+updata_address:
+  al_address_update_manage_001:
+    name: "Wesker"
+    phone: "18600004444"
+    sheng: "江苏省"
+    shi: "南京市"
+    qu: "白下区"
+    info_address: "xxxx号"
+    code: "030003"
